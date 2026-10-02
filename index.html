@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бөден Саида</title>
+  <meta name="description" content="Саиданың жеке сайты: Алматыда тұратын студент, Python, JavaScript және GitHub-пен жұмыс істейді.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="side">
+    <div class="side-top">
+      <div class="mark">С</div>
+      <p class="side-name">Бөден Саида</p>
+      <p class="side-city">Алматы</p>
+    </div>
+
+    <nav class="side-nav">
+      <a href="#intro">Сәлем</a>
+      <a href="#about">Мен туралы</a>
+      <a href="#skills">Дағдылар</a>
+      <a href="#interests">Қызығушылықтар</a>
+      <a href="#contacts">Байланыс</a>
+    </nav>
+
+    <div class="side-social">
+      <a href="https://instagram.com/saihox_" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/saihom_7" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="intro" class="intro">
+      <p class="mono">// ЖенПУ студенті</p>
+      <h1>Сәлем, мен <em>Саида.</em></h1>
+      <p class="lead">Алматыда тұрамын, оқимын және кодпен жұмыс істеуді үйренемін.</p>
+
+      <div class="commits" id="commits" aria-hidden="true"></div>
+      <p class="commits-note mono">Әр шаршы: GitHub-тағы бір күн сияқты</p>
+    </section>
+
+    <section id="about" class="band band-a">
+      <div class="inner">
+        <h2>Мен туралы</h2>
+        <p>Менің атым Саида. Мен Алматыда тұрамын және ЖенПУ университетінде оқимын. Маған оқу, IT және басқа да көптеген тақырыптар қызық. Python, JavaScript және GitHub-пен жұмыс істей аламын.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="band band-b">
+      <div class="inner">
+        <h2>Не істей аламын</h2>
+        <ul class="skills">
+          <li><span class="mono">py</span><b>Python</b></li>
+          <li><span class="mono">js</span><b>JavaScript</b></li>
+          <li><span class="mono">git</span><b>GitHub</b></li>
+          <li class="more"><span class="mono">+</span><b>Және тағы басқалары</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="interests" class="band band-a">
+      <div class="inner">
+        <h2>Неге қызығамын</h2>
+        <ul class="tags">
+          <li>IT</li>
+          <li>Оқу</li>
+          <li>Тағы көп нәрсе</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacts" class="band band-b">
+      <div class="inner">
+        <h2>Байланыс</h2>
+        <ul class="links">
+          <li><a href="https://instagram.com/saihox_" target="_blank" rel="noopener"><span>Instagram</span><b>@saihox_</b></a></li>
+          <li><a href="https://t.me/saihom_7" target="_blank" rel="noopener"><span>Telegram</span><b>@saihom_7</b></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer><p>© 2026 Бөден Саида</p></footer>
+  </main>
+
+  <script>
+    // GitHub-тағы жасыл шаршылар сияқты безендіру
+    (function () {
+      var box = document.getElementById('commits');
+      var seed = 7;
+      function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+      for (var i = 0; i < 7 * 26; i++) {
+        var s = document.createElement('i');
+        var r = rnd();
+        s.className = 'l' + (r < .35 ? 0 : r < .6 ? 1 : r < .8 ? 2 : r < .93 ? 3 : 4);
+        box.appendChild(s);
+      }
+    })();
+  </script>
+</body>
+</html>
