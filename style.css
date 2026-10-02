@@ -1,0 +1,194 @@
+:root {
+  --bg: #0f1218;
+  --bg2: #151a23;
+  --panel: #1b212c;
+  --text: #e8ebf2;
+  --mute: #98a1b5;
+  --mint: #8fd6b8;
+  --sand: #f0d9b5;
+  --side: 17rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 1.1rem/1.7 "Noto Sans", "Segoe UI", Arial, sans-serif;
+}
+
+.mono { font-family: "JetBrains Mono", "Consolas", monospace; }
+
+/* ---------- Сол жақ панель ---------- */
+.side {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--side);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0b0d12;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+
+.mark {
+  width: 4rem; height: 4rem;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  background: var(--mint);
+  color: #0b0d12;
+  font: 800 1.9rem "Noto Sans", sans-serif;
+  margin-bottom: 1.25rem;
+}
+.side-name { font-weight: 800; font-size: 1.2rem; line-height: 1.3; }
+.side-city { color: var(--mute); font-size: .95rem; }
+
+.side-nav { display: grid; gap: .15rem; }
+.side-nav a {
+  color: var(--mute);
+  text-decoration: none;
+  padding: .45rem 0 .45rem 1rem;
+  border-left: 2px solid rgba(255,255,255,.1);
+  font-size: .98rem;
+  transition: color .2s, border-color .2s;
+}
+.side-nav a:hover { color: var(--text); border-color: var(--mint); }
+
+.side-social { display: grid; gap: .35rem; }
+.side-social a { color: var(--sand); text-decoration: none; font-size: .95rem; }
+.side-social a:hover { text-decoration: underline; }
+
+/* ---------- Негізгі бөлім ---------- */
+main { margin-left: var(--side); }
+
+.intro {
+  min-height: 100vh;
+  padding: 6rem clamp(1.5rem, 6vw, 5rem) 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro .mono { color: var(--mint); font-size: .95rem; margin-bottom: 1rem; }
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -.03em;
+  max-width: 14ch;
+}
+h1 em { font-style: normal; color: var(--sand); }
+
+.lead { margin-top: 1.5rem; max-width: 30rem; color: var(--mute); font-size: 1.2rem; }
+
+/* GitHub шаршылары */
+.commits {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 4px;
+  max-width: 34rem;
+}
+.commits i { aspect-ratio: 1; border-radius: 3px; background: #1c222d; }
+.commits .l1 { background: #1f4d3c; }
+.commits .l2 { background: #2f7d5f; }
+.commits .l3 { background: #5bb592; }
+.commits .l4 { background: var(--mint); }
+.commits-note { margin-top: .75rem; color: var(--mute); font-size: .8rem; }
+
+/* ---------- Диагональ жолақтар ---------- */
+.band {
+  position: relative;
+  margin-top: -3.5rem;
+  padding: 9rem clamp(1.5rem, 6vw, 5rem) 6rem;
+  clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0 100%);
+}
+.band-a { background: var(--bg2); }
+.band-b { background: var(--panel); }
+.band:nth-of-type(even) { clip-path: polygon(0 0, 100% 3.5rem, 100% 100%, 0 100%); }
+
+.inner { max-width: 44rem; }
+
+h2 {
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+.band p { color: #cdd2e0; }
+
+/* Дағдылар */
+.skills { list-style: none; display: grid; gap: .75rem; }
+.skills li {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 1rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  transition: border-color .2s, transform .2s;
+}
+.skills li:hover { border-color: var(--mint); transform: translateX(6px); }
+.skills .mono {
+  min-width: 3rem; text-align: center;
+  padding: .2rem .5rem; border-radius: 8px;
+  background: rgba(143,214,184,.14); color: var(--mint); font-size: .9rem;
+}
+.skills b { font-size: 1.15rem; }
+.skills .more { border-style: dashed; color: var(--mute); }
+
+/* Қызығушылықтар */
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .75rem; }
+.tags li {
+  padding: .55rem 1.3rem; border-radius: 999px; font-weight: 600;
+  border: 1.5px solid var(--sand); color: var(--sand);
+}
+
+/* Байланыс */
+.links { list-style: none; display: grid; gap: .8rem; max-width: 26rem; }
+.links a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding: 1rem 1.4rem; border-radius: 14px;
+  color: var(--text); text-decoration: none;
+  background: var(--bg); border: 1px solid rgba(255,255,255,.09);
+  transition: border-color .2s, transform .2s;
+}
+.links a:hover { border-color: var(--sand); transform: translateX(6px); }
+.links b { color: var(--sand); font-weight: 600; }
+
+a:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+
+footer {
+  background: var(--panel);
+  margin-top: -1px;
+  padding: 0 clamp(1.5rem, 6vw, 5rem) 2.5rem;
+  color: var(--mute);
+  font-size: .95rem;
+}
+
+/* ---------- Телефон ---------- */
+@media (max-width: 900px) {
+  .side {
+    position: static;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+  .side-top { display: flex; align-items: center; gap: 1rem; }
+  .mark { margin: 0; width: 3.2rem; height: 3.2rem; font-size: 1.5rem; }
+  .side-nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+  .side-nav a { border-left: 0; padding: .25rem 0; }
+  .side-social { display: flex; gap: 1.25rem; }
+  main { margin-left: 0; }
+  .intro { min-height: auto; padding-top: 3.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .skills li, .links a, .side-nav a { transition: none; }
+}
